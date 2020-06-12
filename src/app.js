@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Homepage from "./pages/Homepage";
+import AppRouter from "./routers/AppRouter";
 
 const jsx = (
   <div>
-    <Homepage />
+    <AppRouter />
   </div>
 );
 
