@@ -1,15 +1,18 @@
 import React from "react";
+import { Link, withRouter } from "react-router-dom";
 
 import "../styles/menu-item.scss";
 
-const MenuItem = (props) => (
-  <div className="menu-item">
+const MenuItem = ({ title, subtitle, history, linkURL, match }) => (
+  <div
+    className="menu-item"
+    onClick={(s) => history.push(`${match.url}${linkURL}`)}
+  >
     <div className="content">
-      <h1 className="title"> {props.title} </h1>
-      <br></br>
-      <p className="subtitle"> {props.subtitle} </p>
+      <h1 className="title"> {title} </h1>
+      <p className="subtitle"> {subtitle} </p>
     </div>
   </div>
 );
 
-export default MenuItem;
+export default withRouter(MenuItem);

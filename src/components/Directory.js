@@ -9,11 +9,36 @@ export default class Directory extends React.Component {
 
     this.state = {
       collections: [
-        { id: "C0000", title: "HATS", subtitle: "SHOP NOW" },
-        { id: "C0001", title: "BOTTOM", subtitle: "SHOP NOW" },
-        { id: "C0002", title: "TOP", subtitle: "SHOP NOW" },
-        { id: "C0003", title: "MEN", subtitle: "SHOP NOW" },
-        { id: "C0004", title: "WOMAN", subtitle: "SHOP NOW" },
+        {
+          id: "C0000",
+          title: "HATS",
+          subtitle: "SHOP NOW",
+          linkURL: "hats",
+        },
+        {
+          id: "C0001",
+          title: "BOTTOM",
+          subtitle: "SHOP NOW",
+          linkURL: "bottoms",
+        },
+        {
+          id: "C0002",
+          title: "TOP",
+          subtitle: "SHOP NOW",
+          linkURL: "tops",
+        },
+        {
+          id: "C0003",
+          title: "MEN",
+          subtitle: "SHOP NOW",
+          linkURL: "men",
+        },
+        {
+          id: "C0004",
+          title: "WOMAN",
+          subtitle: "SHOP NOW",
+          linkURL: "woman",
+        },
       ],
     };
   }
@@ -21,12 +46,8 @@ export default class Directory extends React.Component {
   render() {
     return (
       <div className="directory-menu">
-        {this.state.collections.map((collection) => (
-          <MenuItem
-            key={collection.id}
-            title={collection.title}
-            subtitle={collection.subtitle}
-          />
+        {this.state.collections.map(({ id, ...otherCollectionProps }) => (
+          <MenuItem key={id} {...otherCollectionProps} />
         ))}
       </div>
     );
